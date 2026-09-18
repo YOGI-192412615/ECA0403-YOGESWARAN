@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2"><drawing>
+<settings><setting alwaysvectorfont="no"/><setting verticaltext="up"/></settings>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunit="mm"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="24" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="21" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="21" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="11" fill="3" visible="yes" active="yes"/>
+<layer number="30" name="bStop" color="6" fill="6" visible="yes" active="yes"/>
+</layers>
+<libraries><library name="Custom"><packages>
+<package name="R_THT">
+<wire x1="-3" y1="-0.8" x2="3" y2="-0.8" width="0.3" layer="21"/>
+<wire x1="-3" y1="0.8" x2="3" y2="0.8" width="0.3" layer="21"/>
+<pad name="1" x="-4" y="0" drill="0.9" diameter="1.8" shape="square"/>
+<pad name="2" x="4" y="0" drill="0.9" diameter="1.8"/>
+</package>
+<package name="C_THT">
+<circle x="0" y="0" radius="2.2" width="0.3" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="0.9" diameter="1.8" shape="square"/>
+<pad name="2" x="1.27" y="0" drill="0.9" diameter="1.8"/>
+</package>
+<package name="TO92">
+<wire x1="-2" y1="-1.5" x2="2" y2="-1.5" width="0.3" layer="21"/>
+<wire x1="2" y1="-1.5" x2="2" y2="1.5" width="0.3" layer="21"/>
+<wire x1="2" y1="1.5" x2="-2" y2="1.5" width="0.3" layer="21"/>
+<wire x1="-2" y1="1.5" x2="-2" y2="-1.5" width="0.3" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="0.9" diameter="1.8" shape="square"/>
+<pad name="2" x="0" y="0" drill="0.9" diameter="1.8"/>
+<pad name="3" x="1.27" y="0" drill="0.9" diameter="1.8"/>
+</package>
+<package name="TO92_JFET">
+<wire x1="-2" y1="-1.5" x2="2" y2="-1.5" width="0.3" layer="21"/>
+<wire x1="2" y1="-1.5" x2="2" y2="1.5" width="0.3" layer="21"/>
+<wire x1="2" y1="1.5" x2="-2" y2="1.5" width="0.3" layer="21"/>
+<wire x1="-2" y1="1.5" x2="-2" y2="-1.5" width="0.3" layer="21"/>
+<pad name="1" x="-1.27" y="0" drill="0.9" diameter="1.8" shape="square"/>
+<pad name="2" x="0" y="0" drill="0.9" diameter="1.8"/>
+<pad name="3" x="1.27" y="0" drill="0.9" diameter="1.8"/>
+</package>
+<package name="L_THT">
+<circle x="0" y="0" radius="3" width="0.3" layer="21"/>
+<pad name="1" x="-2.54" y="0" drill="1" diameter="2"/>
+<pad name="2" x="2.54" y="0" drill="1" diameter="2"/>
+</package>
+<package name="HDR2">
+<pad name="1" x="-2.54" y="0" drill="1" diameter="2" shape="square"/>
+<pad name="2" x="2.54" y="0" drill="1" diameter="2"/>
+</package>
+</packages></library></libraries>
+<board>
+<plain><wire x1="0" y1="0" x2="80" y2="0" width="0.2" layer="20"/><wire x1="80" y1="0" x2="80" y2="60" width="0.2" layer="20"/><wire x1="80" y1="60" x2="0" y2="60" width="0.2" layer="20"/><wire x1="0" y1="60" x2="0" y2="0" width="0.2" layer="20"/><text x="4" y="5" size="1.5" layer="21" ratio="10">ECA04 EXP 11 - MONOSTABLE MULTIVIBRATOR</text><text x="4" y="57" size="1.1" layer="21" ratio="10">DRC target: 0 errors | 0 unconnected | 0 clearance violations</text><text x="4" y="8.0" size="1.0" layer="21" ratio="10">Manual values: 12V, BC547C, R1=10k, R2=100k, R3=100k, R4=10k, C1=680n, C2=1u</text><text x="4" y="9.7" size="1.0" layer="21" ratio="10">Manual schematic labels the 100k and 100-ohm resistors both as R6; unique PCB references R5=100k and R6=100 are used to avoid duplicate designators</text><text x="4" y="11.4" size="1.0" layer="21" ratio="10">Pulse-width relation from manual: T = 0.69 R C</text><text x="4" y="13.1" size="1.0" layer="21" ratio="10">PCB is single-sided THT with trigger, output and power headers; DRC target is zero errors/unconnected</text></plain>
+<designrules>
+<description language="en">ECA04 educational PCB design. Single-sided through-hole board.</description>
+<param name="layerSetup" value="(1*16)"/>
+<param name="mdWireWire" value="6mil"/>
+<param name="mdWirePad" value="6mil"/>
+<param name="mdWireVia" value="6mil"/>
+<param name="mdPadPad" value="6mil"/>
+<param name="mdPadVia" value="6mil"/>
+<param name="mdViaVia" value="6mil"/>
+<param name="msWidth" value="20mil"/>
+<param name="msDrill" value="36mil"/>
+</designrules>
+<elements><element name="Q1" library="Custom" package="TO92" value="BC547C" x="30" y="30" rot="R0"/><element name="Q2" library="Custom" package="TO92" value="BC547C" x="55" y="30" rot="R0"/><element name="R1" library="Custom" package="R_THT" value="10k" x="30" y="14" rot="R90"/><element name="R2" library="Custom" package="R_THT" value="100k" x="55" y="14" rot="R90"/><element name="R3" library="Custom" package="R_THT" value="100k" x="42" y="14" rot="R90"/><element name="R4" library="Custom" package="R_THT" value="10k" x="55" y="48" rot="R0"/><element name="R5" library="Custom" package="R_THT" value="100k" x="18" y="48" rot="R90"/><element name="R6" library="Custom" package="R_THT" value="100" x="42" y="50" rot="R0"/><element name="C1" library="Custom" package="C_THT" value="680n" x="42" y="25" rot="R0"/><element name="C2" library="Custom" package="C_THT" value="1u" x="10" y="40" rot="R0"/><element name="J1" library="Custom" package="HDR2" value="TRIGGER" x="5" y="40" rot="R0"/><element name="J2" library="Custom" package="HDR2" value="OUTPUT" x="70" y="30" rot="R0"/><element name="J3" library="Custom" package="HDR2" value="VCC/GND" x="70" y="52" rot="R0"/></elements>
+<signals><signal name="VCC"><contactref element="R1" pad="1"/><contactref element="R2" pad="1"/><contactref element="R3" pad="1"/><contactref element="R4" pad="1"/><contactref element="J3" pad="1"/><wire x1="30" y1="10" x2="55" y2="10" width="0.5" layer="16"/><wire x1="42" y1="10" x2="42" y2="10" width="0.5" layer="16"/><wire x1="70" y1="49.46" x2="70" y2="10" width="0.5" layer="16"/></signal><signal name="GND"><contactref element="R5" pad="2"/><contactref element="R6" pad="2"/><contactref element="J1" pad="2"/><contactref element="J3" pad="2"/><wire x1="14" y1="48" x2="42" y2="48" width="0.5" layer="16"/><wire x1="42" y1="52" x2="70" y2="52" width="0.5" layer="16"/><wire x1="7.54" y1="40" x2="7.54" y2="52" width="0.5" layer="16"/><wire x1="42" y1="52" x2="42" y2="50" width="0.5" layer="16"/></signal><signal name="Q1C"><contactref element="Q1" pad="1"/><contactref element="R1" pad="2"/><contactref element="C1" pad="1"/><wire x1="28.73" y1="30" x2="30" y2="18" width="0.5" layer="16"/><wire x1="30" y1="18" x2="40.73" y2="25" width="0.5" layer="16"/></signal><signal name="Q1B"><contactref element="Q1" pad="2"/><contactref element="R5" pad="1"/><contactref element="C2" pad="2"/><contactref element="R2" pad="2"/><wire x1="30" y1="30" x2="18" y2="44" width="0.5" layer="16"/><wire x1="18" y1="44" x2="18" y2="44" width="0.5" layer="16"/><wire x1="11.27" y1="40" x2="18" y2="40" width="0.5" layer="16"/><wire x1="55" y1="18" x2="55" y2="30" width="0.5" layer="16"/></signal><signal name="Q2B"><contactref element="Q2" pad="2"/><contactref element="R3" pad="2"/><contactref element="C1" pad="2"/><wire x1="55" y1="30" x2="42" y2="30" width="0.5" layer="16"/><wire x1="42" y1="30" x2="42" y2="25" width="0.5" layer="16"/><wire x1="42" y1="25" x2="42" y2="18" width="0.5" layer="16"/></signal><signal name="Q2C_OUT"><contactref element="Q2" pad="1"/><contactref element="R2" pad="2"/><contactref element="R4" pad="1"/><contactref element="J2" pad="1"/><wire x1="53.73" y1="30" x2="55" y2="18" width="0.5" layer="16"/><wire x1="55" y1="18" x2="55" y2="44" width="0.5" layer="16"/><wire x1="55" y1="44" x2="55" y2="48" width="0.5" layer="16"/><wire x1="55" y1="30" x2="67.46" y2="30" width="0.5" layer="16"/></signal><signal name="EMITTER"><contactref element="Q1" pad="3"/><contactref element="Q2" pad="3"/><contactref element="R6" pad="1"/><wire x1="31.27" y1="30" x2="31.27" y2="48" width="0.5" layer="16"/><wire x1="56.27" y1="30" x2="56.27" y2="48" width="0.5" layer="16"/><wire x1="31.27" y1="48" x2="42" y2="48" width="0.5" layer="16"/><wire x1="56.27" y1="48" x2="42" y2="48" width="0.5" layer="16"/></signal><signal name="TRIGGER"><contactref element="J1" pad="1"/><contactref element="C2" pad="1"/><wire x1="2.46" y1="40" x2="8.73" y2="40" width="0.5" layer="16"/></signal></signals>
+</board></drawing></eagle>
